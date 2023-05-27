@@ -2,14 +2,12 @@ use ini::Ini;
 use std::path::Path;
 
 fn exist(path:&str)->bool{
-    let created:bool=false;
     if Path::new(path).exists() == true{
-        created=false;
+        true
     }else{
-        created=true;
+        false
     }
     
-    created
 }
 
 pub fn new(path:&str){
@@ -36,9 +34,10 @@ pub fn insert(path:&str, data:Vec<(&str, &str)>){
                 .set(object.0.to_string(), object.1.to_string());     
         }
 
+        id+=1;
+
         db.write_to_file(path).unwrap();
 
-        id+=1;
     }
     
 }
@@ -99,15 +98,3 @@ pub fn delete_all(path:&str){
     }
 }
 
-
-
-#[cfg(test)]
-mod tests {
-    use super::*;
-
-    #[test]
-    fn it_works() {
-        let result = add(2, 2);
-        assert_eq!(result, 4);
-    }
-}

@@ -59,11 +59,11 @@ cargo add virvadb
 
 # TODO
 
-- [] Make it fast on data intensive task , like tileset editing (currently very slow)
+- [o] Make it fast on data intensive task , like tileset editing (currently very slow)
 
-- [] Protect the database with password
+- [o] Protect the database with password
 
-- [] and many more ...
+- [o] and many more ...
 
 # Contribution 
 

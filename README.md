@@ -23,31 +23,36 @@ cargo add virvadb
 
 ## Usage
 ```rust
-### import virvadb
+//import virvadb
 >>> use virvadb;
 
-### create a new db
+// create a new db
 >>> let db_path="mydesktop/player.db";
 
 >>> virvadb::new(db_path);
 
-### create data
+// create data
 >>> let player_data=vec![("name","polka"), ("health_point", "14"), ("attack_point","15"), ("level","5")];
 
 >>> virvadb::insert(db_path, &player_data);
 
-### read data
+// read data
 >>> let db=virvadb::get_db(db_path);
 
 >>> let data_position=1;
 
 >>> let player_name=&db[Some(data_position.to_string())]["name"];
-### update data
->>> virvadb::update(db_path, vec![("name", "john")], data_position);
 
-### delete single data 
+>>> println!("the player name is {}", player_name);
+
+// update data
+>>> virvadb::update(db_path, &vec![("name", "john")], data_position);
+
+// delete single data 
 >>> virvadb::delete(db_path, data_position);
 
-### delete all data
+// delete all data
 >>> virvadb::delete_all(db_path);
 ```
+# Preview
+![virvadb preview](rsc/virvadb_preview.png)

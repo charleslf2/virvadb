@@ -1,6 +1,6 @@
 [package]
 name = "virvadb"
-version = "0.1.0"
+version = "0.1.1"
 edition = "2021"
 description="virvadb is a simple data base that save your data into INI file format"
 readme="README.md"

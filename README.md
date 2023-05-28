@@ -7,11 +7,11 @@ virvadb is a simple data base that save your data into INI file format
 I build  virvadb  primarly for the data driven 2D game engine Im working on right now , as it is more easy to work with INI files. But you can use it for all sort of application. 
 
 # Features
-[x] Create a custom database with any extension e.g (db.mydb, map.data)
+- [x] Create a custom database with any extension e.g (db.mydb, map.data)
 
-[x] CRUD operations
+- [x] CRUD operations
 
-[x] all element are '&str' type
+- [x] all element are '&str' type
 
 # Getting Started 
 
@@ -59,11 +59,11 @@ cargo add virvadb
 
 # TODO
 
-[] Make it fast on data intensive task , like tileset editing (currently very slow)
+- [] Make it fast on data intensive task , like tileset editing (currently very slow)
 
-[] Protect the database with password
+- [] Protect the database with password
 
-and many more ...
+- [] and many more ...
 
 # Contribution 
 

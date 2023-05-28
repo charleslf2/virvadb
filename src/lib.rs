@@ -10,6 +10,7 @@ fn exist(path:&str)->bool{
     
 }
 
+/// Create a new database ; automaticly skip if the db already exist
 pub fn new(path:&str){
 
     if exist(path) == false{
@@ -18,6 +19,7 @@ pub fn new(path:&str){
     }
 }
 
+/// insert new element in the database
 pub fn insert(path:&str, data:&Vec<(&str, &str)>){
 
     if exist(path)==true{
@@ -37,13 +39,13 @@ pub fn insert(path:&str, data:&Vec<(&str, &str)>){
     
 }
 
-
+/// return your database ; will panic if database don't exist
 pub fn get_db(path:&str)->Ini{
     let db=Ini::load_from_file(path).unwrap(); 
     db    
 }
 
-
+/// update element in your database 
 pub fn update(path:&str, data:&Vec<(&str, &str)>,pos:i32){
 
     if exist(path)==true{
@@ -63,6 +65,7 @@ pub fn update(path:&str, data:&Vec<(&str, &str)>,pos:i32){
     }
 }
 
+/// delete element in your database in a given position ;automaticaly skip if the position did'int exist
 pub fn delete(path:&str, pos:i32){
 
     if exist(path)==true{
@@ -80,6 +83,7 @@ pub fn delete(path:&str, pos:i32){
     }
 }
 
+/// delete all element in the database
 pub fn delete_all(path:&str){
 
     if exist(path)==true{

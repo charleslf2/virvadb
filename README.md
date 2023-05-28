@@ -4,10 +4,10 @@ virvadb is a simple data base that save your data into INI file format
 
 # Purpose of virvadb
 
-I build  virvadb  primary for the data driven 2D game engine Im working on right now , as it is more easy to work with INI files. But you can use it for all sort of application. 
+I build  virvadb  primarly for the data driven 2D game engine Im working on right now , as it is more easy to work with INI files. But you can use it for all sort of application. 
 
 # Features
-[x] Create a custom database with any extension e.g(db.mydb, map.data)
+[x] Create a custom database with any extension e.g (db.mydb, map.data)
 
 [x] CRUD operations
 
@@ -54,5 +54,17 @@ cargo add virvadb
 // delete all data
 >>> virvadb::delete_all(db_path);
 ```
-# Preview
+# Basic database Preview
 ![virvadb preview](rsc/virvadb_preview.png)
+
+# TODO
+
+[] Make it fast on data intensive task , like tileset editing (currently very slow)
+
+[] Protect the database with password
+
+and many more ...
+
+# Contribution 
+
+virvadb ❤️ contributor, wait for your pull request.

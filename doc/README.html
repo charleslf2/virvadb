@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="generator" content="rustdoc">
+    <title>virvadb</title>
+
+    
+    
+</head>
+<body class="rustdoc">
+    <!--[if lte IE 8]>
+    <div class="warning">
+        This old browser is unsupported and will most likely display funky
+        things.
+    </div>
+    <![endif]-->
+
+    
+    <h1 class="title">virvadb</h1>
+    <nav id="TOC"><ul>
+<li><a href="#purpose-of-virvadb">1 Purpose of virvadb</a><ul></ul></li>
+<li><a href="#features">2 Features</a><ul></ul></li>
+<li><a href="#getting-started">3 Getting Started</a><ul>
+<li><a href="#installation">3.1 Installation</a><ul></ul></li>
+<li><a href="#usage">3.2 Usage</a><ul></ul></li></ul></li>
+<li><a href="#basic-database-preview">4 Basic database Preview</a><ul></ul></li>
+<li><a href="#todo">5 TODO</a><ul></ul></li>
+<li><a href="#contribution">6 Contribution</a><ul></ul></li></ul></nav><p>virvadb is a simple data base that save your data into INI file format </p>
+<h1 id="purpose-of-virvadb"><a href="#purpose-of-virvadb">1 Purpose of virvadb</a></h1>
+<p>I build  virvadb  primarly for the data driven 2D game engine Im working on right now , as it is more easy to work with INI files. But you can use it for all sort of application. </p>
+<h1 id="features"><a href="#features">2 Features</a></h1>
+<ul>
+<li><input disabled="" type="checkbox" checked=""/>
+<p>Create a custom database with any extension e.g (db.mydb, map.data)</p>
+</li>
+<li><input disabled="" type="checkbox" checked=""/>
+<p>CRUD operations</p>
+</li>
+<li><input disabled="" type="checkbox" checked=""/>
+<p>all element are ‘&amp;str’ type</p>
+</li>
+</ul>
+<h1 id="getting-started"><a href="#getting-started">3 Getting Started</a></h1><h2 id="installation"><a href="#installation">3.1 Installation</a></h2><div class="example-wrap"><pre class="language-bash"><code>cargo add virvadb
+</code></pre></div><h2 id="usage"><a href="#usage">3.2 Usage</a></h2>
+<div class="example-wrap"><pre class="rust rust-example-rendered"><code><span class="comment">//import virvadb
+</span>&gt;&gt;&gt; <span class="kw">use </span>virvadb;
+
+<span class="comment">// create a new db
+</span>&gt;&gt;&gt; <span class="kw">let </span>db_path=<span class="string">&quot;mydesktop/player.db&quot;</span>;
+
+&gt;&gt;&gt; virvadb::new(db_path);
+
+<span class="comment">// create data
+</span>&gt;&gt;&gt; <span class="kw">let </span>player_data=<span class="macro">vec!</span>[(<span class="string">&quot;name&quot;</span>,<span class="string">&quot;polka&quot;</span>), (<span class="string">&quot;health_point&quot;</span>, <span class="string">&quot;14&quot;</span>), (<span class="string">&quot;attack_point&quot;</span>,<span class="string">&quot;15&quot;</span>), (<span class="string">&quot;level&quot;</span>,<span class="string">&quot;5&quot;</span>)];
+
+&gt;&gt;&gt; virvadb::insert(db_path, <span class="kw-2">&amp;</span>player_data);
+
+<span class="comment">// read data
+</span>&gt;&gt;&gt; <span class="kw">let </span>db=virvadb::get_db(db_path);
+
+&gt;&gt;&gt; <span class="kw">let </span>data_position=<span class="number">1</span>;
+
+&gt;&gt;&gt; <span class="kw">let </span>player_name=<span class="kw-2">&amp;</span>db[<span class="prelude-val">Some</span>(data_position.to_string())][<span class="string">&quot;name&quot;</span>];
+
+&gt;&gt;&gt; <span class="macro">println!</span>(<span class="string">&quot;the player name is {}&quot;</span>, player_name);
+
+<span class="comment">// update data
+</span>&gt;&gt;&gt; virvadb::update(db_path, <span class="kw-2">&amp;</span><span class="macro">vec!</span>[(<span class="string">&quot;name&quot;</span>, <span class="string">&quot;john&quot;</span>)], data_position);
+
+<span class="comment">// delete single data 
+</span>&gt;&gt;&gt; virvadb::delete(db_path, data_position);
+
+<span class="comment">// delete all data
+</span>&gt;&gt;&gt; virvadb::delete_all(db_path);</code></pre></div>
+<h1 id="basic-database-preview"><a href="#basic-database-preview">4 Basic database Preview</a></h1>
+<p><img src="rsc/virvadb_preview.png" alt="virvadb preview" /></p>
+<h1 id="todo"><a href="#todo">5 TODO</a></h1>
+<ul>
+<li>
+<p>[o] Make it fast on data intensive task , like tileset editing (currently very slow)</p>
+</li>
+<li>
+<p>[o] Protect the database with password</p>
+</li>
+<li>
+<p>[o] and many more …</p>
+</li>
+</ul>
+<h1 id="contribution"><a href="#contribution">6 Contribution</a></h1>
+<p>virvadb ❤️ contributor, wait for your pull request.</p>
+
+    
+</body>
+</html>

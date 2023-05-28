@@ -2,14 +2,14 @@
 name = "virvadb"
 version = "0.1.0"
 edition = "2021"
-[description]="virvadb is a simple data base that save your data into INI file format"
-[readme]="README.md"
-[documentation]=""
-[homepage]="https://github.com/charleslf2/virvadb"
-[repository]="https://github.com/charleslf2/virvadb"
-[license]="MIT"
-[keywords]=["database", "INI","DB", "data driven", "data driven db"]
-[categories]=["development-tools"]
+description="virvadb is a simple data base that save your data into INI file format"
+readme="README.md"
+documentation=""
+homepage="https://github.com/charleslf2/virvadb"
+repository="https://github.com/charleslf2/virvadb"
+license="MIT"
+keywords=["database", "INI","DB", "data driven", "data driven db"]
+categories=["development-tools"]
 authors=["Charles TCHANAKE <datadevfernolf@gmail.com>"]
 
 # See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html

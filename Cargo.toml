@@ -8,7 +8,7 @@ documentation=""
 homepage="https://github.com/charleslf2/virvadb"
 repository="https://github.com/charleslf2/virvadb"
 license="MIT"
-keywords=["database", "INI","DB", "data driven", "data driven db"]
+keywords=["database", "INI","DB", "data_driven", "data_driven_db"]
 categories=["development-tools"]
 authors=["Charles TCHANAKE <datadevfernolf@gmail.com>"]
 
